@@ -78,6 +78,9 @@ array.unshift ("dart");  // unshift is use to add in first
 array.pop(); // remove from last
 array.shift(); // remove from first
 
+// splice() method is used to add, remove, or replace elements in an array.
+ array.splice(start, deleteCount, item1, item2, ...);
+
 // Example: Using find, findIndex, slice, concat, and includes array methods together
 
 const numbers = [1, 2, 3, 4, 5];
