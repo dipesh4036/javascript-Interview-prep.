@@ -81,6 +81,23 @@ That means if you write !! in front of anything, it will give you either true or
 ```
 
 *3)Understanding call, apply, and bind-*
+``` javascript
+const person = {
+  fullName: function (city, country) {
+    return `${this.firstName} ${this.lastName} from ${city}, ${country}`;
+  },
+};
+
+const person1 = { firstName: "John", lastName: "Doe" };
+
+console.log(person.fullName.call(person1, "New York", "USA"));
+// Output: "John Doe from New York, USA"
+console.log(person.fullName.apply(person1, ["Los Angeles", "USA"]));
+// Output: "John Doe from Los Angeles, USA"
+const boundFullName = person.fullName.bind(person1, "Chicago", "USA");
+console.log(boundFullName());
+// Output: "John Doe from Chicago, USA"
+```
 To change a function's this value to some object of our choice, we can use call, apply, and bind.
 ```javascript
 // usign "call"
